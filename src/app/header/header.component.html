@@ -1,0 +1,17 @@
+<header>
+  <div class="header-content">
+    <a href="/" class="logo">MTGCore</a>
+    <div class="search-bar">
+      <input
+        type="search"
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="searchCard()"
+        placeholder="Search cards..."
+      />
+      <button type="button" (click)="searchCard()">Search</button>
+    </div>
+    <button type="button" (click)="randomCard()" class="random-button">Random</button>
+    <button type="button" (click)="registerForm()" class="register-button">Register</button>
+    <button type="button" (click)="loginForm()" class="login-button">Login</button>
+  </div>
+</header>

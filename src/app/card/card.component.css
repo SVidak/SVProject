@@ -1,0 +1,106 @@
+.card-profile {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.card-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.card-image {
+  margin-right: 20px;
+}
+
+.card-image img {
+  max-width: 300px;
+}
+
+.card-details {
+  max-width: 600px;
+  background-color: #e2e2e243;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+.card-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-type {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 20px;
+}
+
+.card-metadata {
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-metadata p {
+  flex: 0 0 50%;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.card-legality-box {
+  margin-top: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-legality {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.card-legality-item {
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  width: 100px;
+  margin-right: 15px;
+}
+
+.legal,
+.not-legal,
+.banned {
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.legal {
+  color: #00c853; 
+  background-color: rgba(0, 200, 83, 0.1);
+}
+
+.not-legal {
+  color: #616161; 
+  background-color: rgba(138, 138, 138, 0.1);
+}
+
+.banned {
+  color: #d32f2f;
+  background-color: rgba(255, 143, 143, 0.1);
+}
+
+.card-legality-row {
+  display: flex;
+}

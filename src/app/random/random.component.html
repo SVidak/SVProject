@@ -1,0 +1,38 @@
+<div *ngIf="card" class="card-page">
+  <div class="card-image">
+    <img [src]="card.image_uris.normal" alt="{{ card.name }}" />
+  </div>
+  <div class="card-details">
+    <h1>{{ card.name }}</h1>
+    <p class="card-type">{{ card.type_line }}</p>
+    <p class="card-text">{{ card.oracle_text }}</p>
+    <div class="card-metadata" style="width: 400px;">
+      <p>Set: {{ card.set_name }}</p>
+      <p>Rarity: {{ card.rarity }}</p>
+      <p>Collector Number: {{ card.collector_number }}</p>
+      <p>Artist: {{ card.artist }}</p>
+      <label *ngIf="card.flavor_text && card.flavor_text.trim() !== ''">
+        Flavor Text: {{ card.flavor_text }}
+      </label>
+
+    </div>
+    <div class="card-legality-box">
+      <dl class="card-legality">
+        <div
+          *ngFor="let legality of card.legalities | keyvalue"
+          class="card-legality-row">
+          <div class="card-legality-item"
+          [ngClass]="{
+            'legal': legality.value === 'legal',
+            'not-legal': legality.value === 'not_legal',
+            'banned': legality.value === 'banned'}">
+          <label>{{ legality.value.toLocaleUpperCase() }}</label>
+        </div>
+       <p class="legality-key">{{ capitalizeFirstLetter(legality.key) }}</p>
+
+        </div>
+      </dl>
+    </div>
+  </div>
+  
+</div>
