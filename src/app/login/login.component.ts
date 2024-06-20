@@ -16,8 +16,8 @@ export class LoginComponent {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -38,5 +38,8 @@ export class LoginComponent {
           alert('An error occurred');
         });
     } 
+    else{
+      alert('Login failed');
+    }
   }
 }
