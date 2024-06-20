@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../service/card.service';
 
@@ -7,11 +7,23 @@ import { CardService } from '../service/card.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-searchTerm: string = '';
+  searchTerm: string = '';
+  isLoggedIn: boolean = false;
 
   constructor(private router: Router, private cardService: CardService) {}
+
+  ngOnInit(): void {
+    this.checkLoginStatus();
+  }
+
+  checkLoginStatus(): void {
+    const email = localStorage.getItem('email');
+    const loggedIn = localStorage.getItem('loggedIn');
+
+    this.isLoggedIn = !!(email && loggedIn === 'true');
+  }
 
   searchCard(): void {
     if (this.searchTerm) {
@@ -20,16 +32,27 @@ searchTerm: string = '';
   }
 
   randomCard(): void {
-    this.cardService.getRandomCard().subscribe((card) => {
+    this.cardService.getRandomCard().subscribe(() => {
       this.router.navigate(['/random']);
     });
   }
 
-  loginForm(): void{
-    this.router.navigate(['/login']);
+  handleLoginLogout(): void {
+    if (this.isLoggedIn) {
+      this.onLogout();
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
-  registerForm(): void{
+  registerForm(): void {
     this.router.navigate(['/register']);
+  }
+
+  onLogout(): void {
+    localStorage.removeItem('email');
+    localStorage.removeItem('loggedIn');
+    this.isLoggedIn = false;
+    this.router.navigate(['/home']);
   }
 }
