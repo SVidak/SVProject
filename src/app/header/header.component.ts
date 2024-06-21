@@ -37,6 +37,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  allCards(): void {
+    this.router.navigate(['/all']);
+  }
+
   handleLoginLogout(): void {
     if (this.isLoggedIn) {
       this.onLogout();

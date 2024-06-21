@@ -53,6 +53,16 @@ header {
     cursor: pointer;
   }
 
+  .all-button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #f77edd;;
+    color: #fff;
+    border-radius: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
   .auth-buttons {
     display: flex;
     align-items: center;

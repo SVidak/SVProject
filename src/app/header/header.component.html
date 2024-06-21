@@ -11,6 +11,7 @@
       <button type="button" (click)="searchCard()">Search</button>
     </div>
     <button type="button" (click)="randomCard()" class="random-button">Random</button>
+    <button *ngIf="isLoggedIn" type="button" (click)="allCards()" class="all-button">All</button>
     <div class="auth-buttons">
     <button type="button" (click)="registerForm()" class="register-button">Register</button>
     <button type="button" (click)="handleLoginLogout()" class="login-button">
