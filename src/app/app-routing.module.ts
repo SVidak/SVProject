@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { RandomComponent } from './random/random.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AllComponent } from './all/all.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'card/:name', component: CardComponent },
   { path: 'random', component: RandomComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'all', component: AllComponent}
 ];
 
 @NgModule({

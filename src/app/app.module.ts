@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { RandomComponent } from './random/random.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AllComponent } from './all/all.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     RandomComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,

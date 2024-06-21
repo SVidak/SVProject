@@ -1,0 +1,11 @@
+<div style="padding-top: 60px;">
+    <div class="container">
+      <div *ngFor="let card of displayedCards" class="card">
+        <img *ngIf="card.image_uris" [src]="card.image_uris.normal" [alt]="card.name" style="width: 100%;" />
+      </div>
+    </div>
+    <button (click)="page > 1 && setPage(page - 1)" [disabled]="page === 1">Previous Page</button>
+    <button *ngFor="let num of pageRange" (click)="handlePageClick(num)">{{ num }}</button>
+    <button (click)="handleNextPage()">Next Page</button>
+  </div>
+  

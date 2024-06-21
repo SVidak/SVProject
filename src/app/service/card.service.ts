@@ -27,6 +27,13 @@ export class CardService {
     );
   }
 
+  getAllCards(page: number): Observable<Card[]> {
+    const url = `${this.baseUrl}/search?as=grid&order=name&page=${page}&q=%28game%3Apaper%29&unique=cards`;
+    return this.http.get<{ data: Card[] }>(url).pipe(
+      map(response => response.data.map(card => this.transformCardData(card)))
+    );
+  }
+
   private transformCardData(data: any): Card {
     return {
       ...data
