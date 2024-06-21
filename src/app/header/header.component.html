@@ -11,9 +11,11 @@
       <button type="button" (click)="searchCard()">Search</button>
     </div>
     <button type="button" (click)="randomCard()" class="random-button">Random</button>
+    <div class="auth-buttons">
     <button type="button" (click)="registerForm()" class="register-button">Register</button>
     <button type="button" (click)="handleLoginLogout()" class="login-button">
       {{ isLoggedIn ? 'Logout' : 'Login' }}
     </button>
+    </div>
   </div>
 </header>

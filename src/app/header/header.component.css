@@ -3,7 +3,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color:#badbff64;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -16,7 +16,7 @@ header {
   .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #000;
+    color: #007bff;
     text-decoration: none;
     margin-right: 20px;
   }
@@ -51,6 +51,12 @@ header {
     border-radius: 4px;
     margin-left: 20px;
     cursor: pointer;
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
   }
 
   .login-button {
